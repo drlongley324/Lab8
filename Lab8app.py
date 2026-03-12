@@ -2,8 +2,16 @@ import json
 import numpy as np
 import pandas as pd
 import streamlit as st
-import tensorflow as tf
 
+try:
+    import tensorflow as tf
+except Exception as e:
+    raise RuntimeError(
+        "TensorFlow failed to load. This usually means the deployment "
+        "environment installed an incompatible version.\n\n"
+        "Fix by using this in requirements.txt:\n"
+        "tensorflow-cpu==2.15.0"
+    ) from e
 
 MODEL_PATH = "artifacts/housing_model.keras"
 PREPROCESSOR_PATH = "artifacts/preprocessor.pkl"
