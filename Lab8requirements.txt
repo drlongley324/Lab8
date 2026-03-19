@@ -1,0 +1,8 @@
+tensorflow==2.10.0
+pandas
+numpy
+scikit-learn
+streamlit
+joblib
+matplotlib
+h5py
